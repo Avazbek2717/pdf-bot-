@@ -3,13 +3,16 @@ from aiogram.filters import Command
 from aiogram.types import FSInputFile
 from aiogram.types.message import ContentType
 from PIL import Image
+from dotenv import load_dotenv
 import asyncio
 import os
 
-API_TOKEN = "7772712876:AAHxf8uiRYTNenc4CSfumxmQbL9efsqd1U8"
+load_dotenv()
+
+TOKEN = os.getenv('TOKEN')
 
 
-bot = Bot(token=API_TOKEN)
+bot = Bot(token=TOKEN)
 dp = Dispatcher()
 router = Router()
 dp.include_router(router)
